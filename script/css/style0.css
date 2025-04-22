@@ -73,6 +73,7 @@ section.fancy p {
 section.pre {
     background: #fff;
     background-image: url("../.././assets/img/gates.jpg");
+    background-attachment: absolute;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: end;

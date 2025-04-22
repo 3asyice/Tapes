@@ -15,14 +15,37 @@
     <link rel="icon" href="../assets/img/icon.jpg" />
     <link rel="stylesheet" href="./css/style0.css">
 </head>
+<style type="text/css" media="all">
+    .main_menu{
+        top:0;bottom:0;left:0;right:0;
+        position:fixed;
+        background-attachment: fixed;
+        z-index: 1;
+        overflow-y: auto;
+        display:none;
+        background: #000000D6;
+    }
+    .main_menu button{
+        background:none;
+        padding-left: 20px;
+        color:#fff;
+        border:none;
+        padding-top: 20px;
+        font-size: 14px;
+        font-weight: 800;
+    }
 </style>
 
 <body>
     <header>
         <h1>LO<strike>V</strike>SER STORY</h1>
-        <button class="menu">☰</button>
+        <button class="menu" onclick="menu()">☰</button>
     </header>
-    <main >
+    <main>
+<div class="main_menu" id="main_menu">
+    
+<button onclick="location.href='../index.html'">Fitas</button>
+</div>
         <section class="fancy">
             <h2>História verdadeira de um recruta do Exército Brasileiro</h2>
             <p>Esses são podcasts, histórias, relatos e experiências pessoais vividas por um soldado voluntário dentro das Forças Armadas do Brasil.</p>
@@ -31,7 +54,7 @@
         <section class="pre">
             <div>
                 <h2 style="margin-bottom: 0;padding-bottom: 0;">A Decisão Errada</h2>
-        <p style="font-size: 12px; padding-top: 0;margin-top: 0;">Ter, 22/Abr 2025</p>
+                <p style="font-size: 12px; padding-top: 0;margin-top: 0;">Ter, 22/Abr 2025</p>
                 <p>Como uma decisão que parece simples e inofensiva, como o voluntarismo obrigatório no Exército Brasileiro, pode dar início a consequências grandes no futuro?</p>
                 <div class="podcast">
                     <div class="audio-player">
@@ -52,8 +75,18 @@
     <footer>
         
     </footer>
-    <script async src="./script/js/script0.js">
+    <script type="text/javascript" charset="utf-8">
+        var x = document.getElementById('main_menu');
+        var y = false;
         
+        function menu() {
+            y = !y;
+            x.style.display = y ? 'block' : 'none';
+        }
+    </script>
+    
+    <script async src="./js/script0.js">
+    
     </script>
 </body>
 
