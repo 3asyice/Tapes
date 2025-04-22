@@ -1,0 +1,188 @@
+* {
+    font-family: sans-serif, serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #000;
+    margin: 0;
+}
+
+header {
+    padding: 5px 0 75px;
+    display: block;
+}
+
+header button.menu {
+    background: none;
+    margin: 20px 20px 0 0;
+    color: #fff;
+    font-size: 23px;
+    text-align: right;
+    border: none;
+    float: right;
+}
+
+strike {
+    color: #FF0000;
+}
+
+header h1 {
+    float: left;
+    color: #fff;
+    font-family: 'Changa One', serif;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 24px;
+    transform: scaleY(1.2);
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+::selection {
+    background: #FF0000;
+    color: #000;
+}
+main {
+    padding-top: 25%;
+    background-image: url('../.././assets/img/carvalho.jpg') !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+section.fancy {
+    color: #fff;
+    padding: 10px 15px 0 10px;
+    font-weight: 300;
+    margin: 0 14%;
+    background: #0000007D;
+}
+
+section.fancy h2 {
+    font-size: 16px;
+}
+
+section.fancy p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+section.pre {
+    background: #fff;
+    background-image: url("../.././assets/img/gates.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: end;
+    padding-top: 50%;
+    margin: 10px 20px 10px 20px;
+}
+
+section.pre div {
+    margin: 10px 20px 10px 20px;
+    padding: 10px 0;
+    background: #000;
+}
+
+section.pre div h2 {
+    color: #FF0000;
+    margin: 15px;
+    font-size: 18px;
+    font-family: 'Changa One', serif;
+    font-weight: 500;
+    transform: scaleY(1.2);
+    text-transform: uppercase;
+}
+
+section.pre div p {
+    margin: 15px 10px 15px 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #747474;
+}
+
+div.audio-player {
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+div.audio-player button {
+    padding: 20px;
+    width: 60px;
+    border: none;
+    background: #E6E6E6;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+section.pre div.podcast div.progress-container {
+    width: 90%;
+    height: 10px;
+    background: #ccc;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.progress-filled {
+    height: 100%;
+    background: #007bff;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.1s ease;
+}
+
+input[type="range"] {
+    width: 90%;
+    height: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+section.pre div.podcast {
+    background: #fff;
+}
+
+section.pre div.podcast p {
+    color: #FF0000;
+    font-weight: 500;
+}
+
+section.pre div.podcast div.audio-player {
+    background: #fff;
+}
+
+section.pre div.podcast div.progress-container div.progress-filled {
+    color: #8B0000;
+    background: #FF0000;
+}
