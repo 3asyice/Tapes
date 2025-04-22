@@ -73,7 +73,7 @@ section.fancy p {
 section.pre {
     background: #fff;
     background-image: url("../.././assets/img/security.jpg");
-    background-attachment: absolute;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: end;
