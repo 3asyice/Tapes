@@ -73,7 +73,7 @@ section.fancy p {
 section.pre {
     background: #fff;
     background-image: url("../.././assets/img/gates.jpg");
-    background-attachment: absolute;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: end;
@@ -89,7 +89,7 @@ section.pre div {
 
 section.pre div h2 {
     color: #FF0000;
-    margin: 15px;
+    margin: 10px 20px 0 20px;
     font-size: 18px;
     font-family: 'Changa One', serif;
     font-weight: 500;
@@ -98,7 +98,7 @@ section.pre div h2 {
 }
 
 section.pre div p {
-    margin: 15px 10px 15px 10px;
+    margin: 15px 20px 15px 20px;
     padding-bottom: 10px;
     font-size: 14px;
     line-height: 20px;
