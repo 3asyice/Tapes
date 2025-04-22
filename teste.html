@@ -40,38 +40,38 @@
 </head>
 <body>
     <div class="audio-player">
-        <audio id="audio" src="seu-audio.mp3"></audio>
+        <audio id="audio" src="https://www.big-loser.site/A/Audio/FITA-4,-LADO-B.m4a"></audio>
         <button id="toggleBtn">Tocar</button>
         <br>
-        <input type="range" id="progressBar" value="0" step="1" min="0" max="100">
+
     </div>
     <script>
         const audio = document.getElementById('audio');
-        const toggleBtn = document.getElementById('toggleBtn');
-        const progressBar = document.getElementById('progressBar');
+const toggleBtn = document.getElementById('toggleBtn');
+const progressBar = document.getElementById('progressBar');
 
-        // Atualiza a barra de progresso conforme o áudio avança
-        audio.addEventListener('timeupdate', function() {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            progressBar.value = progress;
-        });
+// Atualiza a barra de progresso conforme o áudio avança
+audio.addEventListener('timeupdate', function() {
+    const progress = (audio.currentTime / audio.duration) * 100;
+    progressBar.value = progress;
+});
 
-        // Alterna entre tocar e pausar
-        toggleBtn.addEventListener('click', function() {
-            if (audio.paused) {
-                audio.play();
-                toggleBtn.textContent = 'Pausar';
-            } else {
-                audio.pause();
-                toggleBtn.textContent = 'Tocar';
-            }
-        });
+// Alterna entre tocar e pausar
+toggleBtn.addEventListener('click', function() {
+    if (audio.paused) {
+        audio.play();
+        toggleBtn.textContent = 'Pausar';
+    } else {
+        audio.pause();
+        toggleBtn.textContent = 'Tocar';
+    }
+});
 
-        // Atualiza o tempo do áudio ao mover a barra de progresso
-        progressBar.addEventListener('input', function() {
-            const newTime = (progressBar.value / 100) * audio.duration;
-            audio.currentTime = newTime;
-        });
+// Atualiza o tempo do áudio ao mover a barra de progresso
+progressBar.addEventListener('input', function() {
+    const newTime = (progressBar.value / 100) * audio.duration;
+    audio.currentTime = newTime;
+});
     </script>
 </body>
 </html>

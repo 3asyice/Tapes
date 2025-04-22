@@ -19,6 +19,7 @@
 <style type="text/css" media="all">
   * {
     font-family: sans-serif, serif;
+    box-sizing: border-box;
   }
   
   html,
@@ -147,6 +148,43 @@
     color:#FF0000;
     font-weight: 500;
   }
+  
+  input[type="range"] {
+            width: 99%; /* Mantém a largura total do contêiner */
+            height: 10px; /* Aumenta a altura da barra */
+            cursor: pointer;
+        }
+
+        /* Estilo da barra de progresso */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px; /* Largura do "thumb" */
+            height: 20px; /* Altura do "thumb" */
+            border-radius: 50%; /* Arredondar o "thumb" */
+            background: #C9FF00; /* Cor do "thumb" */
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 10px; /* Altura da trilha */
+            background: #9465FF; /* Cor da trilha */
+            border-radius: 5px; /* Arredondar a trilha */
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #00E9FF;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-track {
+            height: 10px;
+            background: #0EFF29;
+            border-radius: 5px;
+        }
 </style>
 <header>
   <h1>UNFAIR STORY</h1>
@@ -170,7 +208,9 @@
           <audio id="audio" src="https://www.big-loser.site/A/Audio/FITA-4,-LADO-B.m4a"></audio>
           <button id="toggleBtn">▶</button>
           <p>Ep 1: A Decisão Errada</p>
+          
         </div>
+        <input type="range" id="progressBar" value="0" step="1" min="0" max="100">
       </div>
     </div>
   </section>
@@ -182,6 +222,14 @@
 <script type="text/javascript" charset="utf-8">
   const audio = document.getElementById('audio');
   const toggleBtn = document.getElementById('toggleBtn');
+  const progressBar = document.getElementById('progressBar');
+
+// Atualiza a barra de progresso conforme o áudio avança
+audio.addEventListener('timeupdate', function() {
+  const progress = (audio.currentTime / audio.duration) * 100;
+  progressBar.value = progress;
+});
+  
   toggleBtn.addEventListener('click', function() {
     if (audio.paused) {
       audio.play();
@@ -191,6 +239,12 @@
       toggleBtn.textContent = '▶';
     }
   });
+  
+  // Atualiza o tempo do áudio ao mover a barra de progresso
+progressBar.addEventListener('input', function() {
+  const newTime = (progressBar.value / 100) * audio.duration;
+  audio.currentTime = newTime;
+});
 </script>
 
 <body>
