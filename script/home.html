@@ -17,6 +17,10 @@
   <link rel="icon" href="../assets/img/icon.jpg" />
 </head>
 <style type="text/css" media="all">
+  * {
+    font-family: sans-serif, serif;
+  }
+  
   html,
   body {
     background: #000;
@@ -36,52 +40,158 @@
     margin-left: 20px;
     font-size: 24px;
     transform: scaleY(1.2);
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: 0;
   }
   
+  ::selection {
+    background: #FF0000;
+    color: #000;
+  }
+  
   main {
-padding-top:25%;
-background-image: url('../assets/img/carvalho.jpg');
+    padding-top: 25%;
+    background-image: url('../assets/img/carvalho.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  section.fancy {
+    color: #fff;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    font-weight: 300;
+    margin-left: 14%;
+    margin-right: 14%;
+    margin-bottom: 20px;
+    background: #0000007D;
+  }
+  
+  section.fancy h2 {
+    font-size: 16px;
+  }
+  
+  section.fancy p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  section.pre {
+    background: #fff;
+    background-image: url("../assets/img/gates.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: end;
- 
-     }
-     section.fancy{
-color:#fff;
-padding-top: 10px;
-padding-left: 15px;
-padding-right: 15px;
-padding-bottom: 10px;
-font-weight: 300;
-margin-left: 14%;
-margin-right: 14%;
-background:#0000007D;
-     }
-
-section.fancy h2{
-font-size: 16px;
-}
-section.fancy p{
-  font-size: 14px;
-}
+    margin-left: 20px;
+    padding-top: 50%;
+    padding-bottom: 10px;
+    margin-right: 20px;
+  }
+  
+  
+  section.pre div {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    background: #000;
+  }
+  
+  section.pre div h2 {
+    color: #FF0000;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 10px;
+    font-size: 18px;
+    font-family: 'Changa One', serif;
+    font-weight: 500;
+    transform: scaleY(1.2);
+    text-transform: uppercase;
+  }
+  
+  section.pre div p {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #747474;
+  }
+  
+  div.audio-player button {
+    padding: 20px;
+    bottom: 10px;
+    position: relative;
+    top: 10px;
+    width: 60px;
+    border: none;
+    background: #E6E6E6;
+    border-radius: 50%;
+    
+  }
+  
+  section.pre div.podcast div.audio-player {
+    display:flex;
+    background: #fff;
+  }
+  
+  section.pre div.podcast {
+    background: #FFF;
+  }
+  
+  section.pre div.podcast div.audio-player p{
+    color:#FF0000;
+    font-weight: 500;
+  }
 </style>
 <header>
-  <h1>DarkSpot War</h1>
+  <h1>UNFAIR STORY</h1>
+  
+  
 </header>
 <main>
   
   <section class="fancy">
-<h2>História verdadeira de um recruta do Exército Brasileiro</h2>
-<p>Esses são podcasts, histórias, relatos e experiências vividas por um soldado voluntário dentro das Forças Armadas do Brasil.</p>
-<p>Novos episódios atualizados frequentemente.</p>
+    <h2>História verdadeira de um recruta do Exército Brasileiro</h2>
+    <p>Esses são podcasts, histórias, relatos e experiências vividas por um soldado voluntário dentro das Forças Armadas do Brasil.</p>
+    <p>Novos episódios atualizados frequentemente.</p>
   </section>
-
+  
+  <section class="pre">
+    <div>
+      <h2>A Decisão Errada</h2>
+      <p>Como a pequena e inofensiva decisão do voluntarismo obrigatório do Exército Brasileiro pode ser o início das consequências colossais no futuro?</p>
+      <div class="podcast">
+        <div class="audio-player">
+          <audio id="audio" src="https://www.big-loser.site/A/Audio/FITA-4,-LADO-B.m4a"></audio>
+          <button id="toggleBtn">▶</button>
+          <p>Ep 1: A Decisão Errada</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 </main>
 <footer>
   
 </footer>
+<script type="text/javascript" charset="utf-8">
+  const audio = document.getElementById('audio');
+  const toggleBtn = document.getElementById('toggleBtn');
+  toggleBtn.addEventListener('click', function() {
+    if (audio.paused) {
+      audio.play();
+      toggleBtn.textContent = '❚❚';
+    } else {
+      audio.pause();
+      toggleBtn.textContent = '▶';
+    }
+  });
+</script>
 
 <body>
   
