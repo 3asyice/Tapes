@@ -76,7 +76,7 @@ section.pre {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: end;
+    background-position: center;
     padding-top: 50%;
     margin: 10px 20px 10px 20px;
 }

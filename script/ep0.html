@@ -60,7 +60,6 @@ a {
     margin: 0px 20px 0px 0px;
     padding-bottom: 10px;
     font-size: 15px;
-    display:inline-flex;
     word-break: break-all;
     line-height: 20px;
     position: relative;
@@ -81,8 +80,12 @@ p a{
     font-size: 14px;
     font-weight: 800;
     line-height: 20px;
+    text-decoration: underline;
     list-style: underline;
     text-decoration-color:#FF0000;
+}
+p a:hover{
+    color:#FF0000;
 }
     </style>
 </head>
@@ -121,7 +124,7 @@ p a{
         <input type="range" id="progressBar" value="0" step="1" min="0" max="100">
     </div>
 </div>
-<p>O <a href="https://www.facebook.com/carloshenrique.teixeiradasilva.31">Teixeira</a> foi como um irmão para mim e saber que ele havia pulado de uma ponte foi a notícia mais triste que já recebi.</p>
+<p>O <a class="link" onclick="location.href='https://www.facebook.com/carloshenrique.teixeiradasilva.31'">Teixeira</a> foi como um irmão para mim e saber que ele havia pulado de uma ponte foi a notícia mais triste que já recebi.</p>
 
 <p style="font-weight: 800;">Source</p>
 <ul>
