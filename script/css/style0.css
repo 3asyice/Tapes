@@ -130,6 +130,7 @@ section.pre div.podcast div.progress-container {
     overflow: hidden;
 }
 
+
 div.progress-filled {
     height: 100%;
     background: #007bff;
@@ -186,5 +187,12 @@ section.pre div.podcast div.audio-player {
 section.pre div.podcast div.progress-container div.progress-filled {
     color: #8B0000;
     background: #FF0000;
+}
+
+footer h1 {
+    color: #fff;
+    font-family: 'Changa One', serif;
+    margin: 50px 0 0 20px;
+    font-size: 23px;
 }
 
