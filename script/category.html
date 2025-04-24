@@ -10,7 +10,7 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/img/icon.jpg" />
-  <link rel="stylesheet" href="./css/style0.css">
+  <link rel="stylesheet" href="./css/alternate.css">
   
   <style type="text/css" media="all">
   
@@ -73,6 +73,78 @@
 }
 ul a{
   display:block;
+}
+  .main_menu {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            z-index: 1;
+            overflow-y: auto;
+            display: none;
+            background: #000000D6;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .main_menu.visible {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .main_menu button {
+            background: none;
+            padding-left: 20px;
+            color: #fff;
+            border: none;
+            padding-top: 30px;
+            font-size: 16px;
+            font-weight: 800;
+        }
+        
+        .main_menu button.x_menu {
+            color: #FF0000F2;
+            text-align: right;
+            font-size: 25px;
+            float: right;
+            padding: 30px 25px 0 0;
+        }
+        
+a {
+    color: #D9D9D9;
+    margin: 0px 20px 0px 0px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    word-break: break-all;
+    line-height: 20px;
+    text-decoration: none;
+    position: relative;
+}
+ul{
+    color:#D9D9D9;
+    font-size: 14px;
+}
+
+a:hover{
+    color:#FF0000;
+}
+
+p a{
+    color:#FFF;
+    margin:0;
+    padding:0;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20px;
+    text-decoration: underline;
+    list-style: underline;
+    text-decoration-color:#FF0000;
+}
+p a:hover{
+    color:#FF0000;
 }
   </style>
 </head>
