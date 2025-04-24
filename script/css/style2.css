@@ -47,7 +47,7 @@ header h1 {
 }
 main {
     padding-top: 25%;
-    background-image: url('../.././assets/img/isaias.jpg') !important;
+    background-image: url('../.././assets/img/bg_609.png') !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -72,11 +72,11 @@ section.fancy p {
 
 section.pre {
     background: #fff;
-    background-image: url("../.././assets/img/ebfacil.jpg");
+    background-image: url("../.././assets/img/nadadeve.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: end;
+    background-position: center;
     padding-top: 50%;
     margin: 10px 20px 10px 20px;
 }
