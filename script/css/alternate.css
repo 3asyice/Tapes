@@ -233,7 +233,7 @@ div.next_previous button.btn_2 {
     color: #000;
     font-size: 12px;
     float: right;
-    margin: 0 20px 0 0;
+    margin: 0;
     padding: 5px 5px 5px 5px;
     border: none;
 }
@@ -247,7 +247,7 @@ div.next_previous button.btn_1 {
     color: #000;
     font-size: 12px;
     float: left;
-    margin: 0 0 0 20px;
+    margin: 0;
     padding: 5px 5px 5px 5px;
     border: none;
 }
