@@ -169,9 +169,10 @@ section.pre div.podcast div.progress-container div.progress-filled {
     color: #8B0000;
     background: #FF0000;
 }
-footer h1{
-    color:#fff;
-    font-family:'Changa One', serif;
+
+footer h1 {
+    color: #fff;
+    font-family: 'Changa One', serif;
     margin: 50px 0 0 20px;
     font-size: 23px;
 }
@@ -195,40 +196,58 @@ a {
     text-decoration: none;
     position: relative;
 }
-ul{
-    color:#D9D9D9;
+
+ul {
+    color: #D9D9D9;
     font-size: 14px;
 }
 
-a:hover{
-    color:#FF0000;
+a:hover {
+    color: #FF0000;
 }
 
-p a{
-    color:#FFF;
-    margin:0;
-    padding:0;
+p a {
+    color: #FFF;
+    margin: 0;
+    padding: 0;
     font-size: 14px;
     font-weight: 800;
     line-height: 20px;
     text-decoration: underline;
     list-style: underline;
-    text-decoration-color:#FF0000;
-}
-p a:hover{
-    color:#FF0000;
+    text-decoration-color: #FF0000;
 }
 
-div.next_previous{
-    text-align: center;
+p a:hover {
+    color: #FF0000;
 }
+
+div.next_previous {
+    text-align: center;
+    display: block;
+    
+}
+
 div.next_previous button.btn_2 {
     font-weight: 800;
-    color:#000;
-    margin:0 20px 0 0;
-    padding:10px 5px 10px 5px;
+    color: #000;
+    font-size: 12px;
+    float: right;
+    margin: 0 20px 0 0;
+    padding: 5px 5px 5px 5px;
     border: none;
 }
+
 div.next_previous button.btn_2:hover {
     background: #f00;
+}
+
+div.next_previous button.btn_1 {
+    font-weight: 800;
+    color: #000;
+    font-size: 12px;
+    float: left;
+    margin: 0 0 0 20px;
+    padding: 5px 5px 5px 5px;
+    border: none;
 }
