@@ -32,6 +32,7 @@ header h1 {
     float: left;
     color: #fff;
     font-family: 'Changa One', serif;
+    cursor: default;
     text-align: left;
     margin-top: 20px;
     margin-left: 20px;
@@ -171,6 +172,7 @@ section.pre div.podcast div.progress-container div.progress-filled {
 }
 
 footer h1 {
+    cursor: default;
     color: #fff;
     font-family: 'Changa One', serif;
     margin: 50px 0 0 20px;
