@@ -255,3 +255,86 @@ div.next_previous button.btn_1 {
 div.next_previous button.btn_1:hover{
     background: #f00;
 }
+
+/* media queries */ 
+
+@media (max-width:600px) {
+            header button.btn_menu{
+                display:none;
+            }
+            header button.menu{
+                display:block;
+            }
+
+        }
+
+       @media (min-width:601px) and (max-width:1024px) {
+  
+}
+
+@media (min-width:1025px) {
+ main {
+    padding-top: 7%;
+    /* Conflito ========
+    background-image: url('../.././assets/img/carvalho.jpg'); */
+    background-image: url('https://3asyice.github.io/Tapes/assets/img/carvalho.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+main section.pre{
+margin: 7% 14% 0 14%;
+padding-top: 3%;
+}
+main section.pre div{
+    margin: 0 7% 0 7%;
+}
+main section.pre div h2{
+    font-size: xx-large;
+}
+main section.fancy p{
+    font-size: 18px;
+}
+
+main section.fancy {
+    margin:0 20% 0 20%;
+}
+main section.fancy h2{
+    font-size: xx-large;
+}
+
+main section.pre div p{
+    font-size: 18px;
+}
+main section.pre div.next_previous button.btn_2{
+    padding:5px 5px 5px 5px;
+    font-size: 18px;
+    position:static;
+}
+main section.pre ul li a{
+    font-size: 18px;
+}
+header h1{
+    margin-left:150px;
+    font-size: xx-large;
+    transform: scaleY(1.9);
+}
+header button.menu{
+    display:none;
+}
+header{
+    margin-right: 150px;
+}
+
+header button.btn_menu{
+color:#fff;
+background:none;
+font-weight: 700;
+border:none;
+font-size: x-large;
+float:right;
+margin:20px 15px 0 15px;
+}
+
+}
