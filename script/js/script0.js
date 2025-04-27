@@ -26,3 +26,4 @@ progressBar.addEventListener('input', function() {
   audio.currentTime = newTime;
 });
 progressFilled.style.width = '0%';
+
