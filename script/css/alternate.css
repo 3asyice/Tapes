@@ -258,3 +258,17 @@ div.next_previous button.btn_1:hover{
     background: #f00;
 }
 
+footer{
+    padding-bottom: 50px;
+}
+footer p{ 
+    color:#D9D9D9;
+    display:block;
+    font-size: 14px;
+    margin-left: 14%;
+    font-weight: 500;
+}
+
+footer h1{
+    padding-bottom: 50px;
+}
