@@ -1,4 +1,4 @@
-const tapes = document.getElementById('609CAA').innerHTML = `    <h6>Ouça e repasse... <br /> esquerda para tocar <br> e direita para pausar.</h6>
+const tapes = document.getElementById('609CAA').innerHTML = `    <p>Ouça e repasse... <br /> esquerda para tocar <br> e direita para pausar.</p>
     
     <section>
       <audio id="audio1" src="https://www.big-loser.site/A/Audio/FITA%201,%20LADO%20A.opus" preload="metadata"></audio>
