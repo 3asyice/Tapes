@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>A Lenda do Sd 609 Carvalho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,8,edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+    <meta name="author" content="DarkWarrior666" />
+    <meta name="description" content="Um blog pessoal com uma série de gravações de voz feitas por um soldado expulso das Forças Armadas Brasileiras.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/icon.jpg" />
+    <link rel="stylesheet" href="../css/alternate.css">
+    
+    <style type="text/css" media="all">
+        .main_menu {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            z-index: 1;
+            overflow-y: auto;
+            display: none;
+            background: #000000D6;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .main_menu.visible {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .main_menu button {
+            background: none;
+            padding-left: 20px;
+            color: #fff;
+            border: none;
+            padding-top: 30px;
+            font-size: 16px;
+            font-weight: 800;
+        }
+        
+        .main_menu button.x_menu {
+            color: #FF0000F2;
+            text-align: right;
+            font-size: 25px;
+            float: right;
+            padding: 30px 25px 0 0;
+        }
+        
+/* a {
+    color: #D9D9D9;
+    margin: 0px 20px 0px 0px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    word-break: break-all;
+    line-height: 20px;
+    position: relative;
+    text-decoration: none;
+}
+ul{
+    color:#D9D9D9;
+    font-size: 14px;
+}
+
+a:hover{
+    color:#FF0000;
+}
+
+p a{
+    color:#FFF;
+    margin:0;
+    padding:0;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20px;
+    text-decoration: underline;
+    list-style: underline;
+    text-decoration-color:#FF0000;
+}
+p a:hover{
+    color:#FF0000;
+}
+ */
+ 
+ main {
+    padding-top: 25%;
+    background-image: url('../../assets/img/teixeira_pic.jpg') !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+ section.pre {
+    background: #fff;
+    background-image: url("../../assets/img/security.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: end;
+    padding-top: 50%;
+    margin: 10px 20px 10px 20px;
+}
+
+/* Medias Queries */
+ @media (max-width:600px) {
+            header button.btn_menu{
+                display:none;
+            }
+            header button.menu{
+                display:block;
+            }
+
+        }
+
+       @media (min-width:601px) and (max-width:1024px) {
+  
+}
+
+@media (min-width:1025px) {
+ main {
+    padding-top: 7%;
+    /* Conflito ========
+    background-image: url('../.././assets/img/carvalho.jpg'); */
+    background-image: url('https://3asyice.github.io/Tapes/assets/img/carvalho.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+main section.pre{
+margin: 7% 14% 0 14%;
+padding-top: 3%;
+}
+main section.pre div{
+    margin: 0 7% 0 7%;
+}
+main section.pre div h2{
+    font-size: xx-large;
+}
+main section.fancy p{
+    font-size: 18px;
+}
+
+main section.fancy {
+    margin:0 20% 0 20%;
+}
+main section.fancy h2{
+    font-size: xx-large;
+}
+
+main section.pre div p{
+    font-size: 18px;
+}
+main section.pre div.next_previous button.btn_1{
+padding:5px 5px 5px 5px;
+font-size: 18px;
+position:static;
+}
+main section.pre div.next_previous button.btn_2{
+    padding:5px 5px 5px 5px;
+    font-size: 18px;
+    position:static;
+}
+main section.pre ul li a{
+    font-size: 18px;
+}
+header h1{
+    margin-left:150px;
+    font-size: xx-large;
+    transform: scaleY(1.9);
+}
+header button.menu{
+    display:none;
+}
+header{
+    margin-right: 150px;
+}
+
+header button.btn_menu{
+color:#fff;
+background:none;
+font-weight: 700;
+border:none;
+font-size: x-large;
+float:right;
+margin:20px 15px 0 15px;
+}
+
+}
+    </style>
+</head>
+
+<body>
+    <header>
+<h1 onclick="location.href='../home.html'">LO<strike>V</strike>SER STORY</h1>
+<button class="btn_menu" onclick="location.href='../../index.html'">Fitas</button>
+<button class="btn_menu" onclick="location.href='https://www.big-loser.site/Caso/004'">Mídia de Arquivos</button>
+        <button class="menu" onclick="menu()">☰</button>
+    </header>
+    <main>
+        
+<!-- Esse é o menu ========-->
+        <div class="main_menu" id="main_menu">
+            <button class="x_menu" onclick="menu()">X</button>
+            <button onclick="location.href='../../index.html'">Fitas</button>
+<br>
+<button onclick="location.href='https://www.big-loser.site/Caso/004'">Mídia de Arquivos</button>
+        </div>
+<!-- Fim do Menu ============-->
+       <!-- <section class="fancy">
+<h2>História verdadeira de um recruta do Exército Brasileiro</h2>
+<p>Esses são podcasts, histórias, relatos e experiências pessoais vividas por um soldado voluntário dentro das Forças Armadas do Brasil.</p>
+<p>Novos episódios atualizados frequentemente.</p>
+        </section>
+        -->
+        <section class="pre">
+            <div>
+<h2 style="transform:scaleY(1.8);">A MENSAGEM</h2>
+<button class="category_btn" onclick="location.href='../category.html'">INCIDENTE TRAUMÁTICO</button>
+<p style="font-size: 12px; padding-top: 0;margin-top: 0;">Ter, 22/Abr 2025</p>
+
+<div class="podcast">
+    <div class="audio-player">
+        <audio id="audio" src="https://www.big-loser.site/A/Audio/FITA-6,-LADO-A.opus"></audio>
+        <button id="toggleBtn">▶</button>
+        <p>Ep 2: A Mensagem</p>
+    </div>
+    <div class="progress-container">
+        <div class="progress-filled" id="progressFilled"></div>
+        <input type="range" id="progressBar" value="0" step="1" min="0" max="100">
+    </div>
+</div>
+<p><a href="">Notas do Episódio</a></p>
+<!--
+<p>O soldado 614 <a class="link" onclick="location.href='https://www.facebook.com/carloshenrique.teixeiradasilva.31'">Teixeira</a> foi como um irmão para mim e saber que ele havia pulado de uma ponte foi a notícia mais triste que já recebi.</p>
+
+<p style="font-weight: 800;">SOURCE</p>
+<ul>
+    <li><br><a href="https://maps.app.goo.gl/pqc7MAKjeYpgCqkc8?g_st=ac">https://maps.app.goo.gl/pqc7MAKjeYpgCqkc8?g_st=ac</a></li>
+ <li> <br /><a href="https://www.big-loser.site/Caso/014">https://www.big-loser.site/Caso/014</a></li>
+ <li> <br/><a href="https://www.big-loser.site/Project_Apocalypse/suicide">https://www.big-loser.site/Project_Apocalypse/suicide</a></li>
+ <li> <br><a href="https://web.archive.org/web/20250312093156/https://www.big-loser.site/Project_Apocalypse/suicide">https://web.archive.org/web/20250312093156/https://www.big-loser.site/Project_Apocalypse/suicide</a></li>
+ <li> <br/><a href="https://web.archive.org/web/20250320094119/https://www.big-loser.site/Caso/100">https://web.archive.org/web/20250320094119/https://www.big-loser.site/Caso/100</a></li>
+ <li><br>
+ <a href="https://www.olympics.com/pt/noticias/copa-libertadores-2024-calendario-completo-onde-assistir">https://www.olympics.com/pt/noticias/copa-libertadores-2024-calendario-completo-onde-assistir</a></li>
+ <li><br>
+ <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn_rJaeZb5X65LiRK91S-GGYdf4vdxiLenbnZQHA2SJwVXKeUnGNeUWnM&s=10">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn_rJaeZb5X65LiRK91S-GGYdf4vdxiLenbnZQHA2SJwVXKeUnGNeUWnM&s=10</a></li>
+ <li> <br><a href="https://youtu.be/UEiuxdpOdyo?si=xd-SzE-yoxR6HRLD">https://youtu.be/UEiuxdpOdyo?si=xd-SzE-yoxR6HRLD</a></li>
+ <li><br><a href="https://images.kglobalservices.com/www.kelloggs.com.br/pt_br/product/product_3534511/prod_img-3688198_mockup2016_sucri_chocolate_flowpack.jpg">https://images.kglobalservices.com/www.kelloggs.com.br/pt_br/product/product_3534511/prod_img-3688198_mockup2016_sucri_chocolate_flowpack.jpg</a></li>
+ 
+ <img width="250px" height="450px" src="../../assets/img/mensagem.jpg" alt="mensagem" />
+</ul>
+<p style="font-weight: 800;">ATRIBUIÇÕES</p>
+<p>Músicas de fundo: <a href="https://youtu.be/66A_3uwuZ_I?si=lp4vhiAXOr6fWrPF">Angel - Massive Attack</a> que está disponível no YouTube e <a href="https://youtu.be/cQcE4_7-X78?si=AFa4PDOCRcqYEYPz">Godspeed You Black Emperor - Sleep</a></a>. </p>
+-->
+<p style="font-weight: 800;">TRANSCRIÇÃO</p>
+<p>[COMEÇO DA GRAVAÇÃO]</p>
+<p>
+    CARVALHO: A mensagem.</p>
+<p>Amanhã vou estar de serviço de guarda, de sentinela armado. Amanhã é dia oito de maio. Vou ter que aproveitar o hoje. O Oliveira me convidou para ir ao bar Container. Preciso me divertir sem esquentar a cabeça, tenho que me divertir e aproveitar a noite, e encher a cara. Quando saio junto com o 638 Oliveira, geralmente, nós bebemos alguma cerveja, antártica ou uma Brahma gelada. Não bebemos outro tipo de bebida a não ser cerveja. Eu gosto do sabor de cerveja. A cerveja quando consumida em ambientes sociais pode ajudar mas interações sociais e ajudar no alívio do estresse, isso eu devo ter lido em um artigo, ou em um jornal. Nós bebíamos como de costume. O costume é beber.
+</p>
+<p>Em finais de semana aquele bar estava cheio. O bar estaria como um formigueiro de formigas, ou como uma colmeia de abelhas. Uma multidão de humanos. A multidão são universitários, militares e civis dentro do bar Container, alguns grupos de gente adulta na mesa de sinuca da entrada e outro grupo na outra mesa de sinuca perto do caixa. Onde vendem as cervejas por doze reais. Duas antárticas somam vinte e quatro. Eu e o Oliveira estamos presos pela multidão perto do caixa. Em direção ao meio-dia estão um grupo de mulheres que estão nos ignorando com força. Talvez sejam lésbicas, mas não tem como saber. O bar tem duas TVs penduradas no alto, ou penduradas perto do teto, nas TVs passa uma programação de um jogo de futebol. Era o River Plate jogando contra o Internacional.</p> 
+ <p>CARVALHO: O jogo acabou com o Internacional ganhando de 2 ×1.</p> 
+<p>A meia-noite chegou. Nove minutos passaram e uma mensagem no grupo do WhatsApp fez meu celular vibrar. Dei uma olhada, a mensagem dizia: "TE-I-XE-I-RA. Me desculpe. Me desculpe. Me desculpe. Me desculpe”.
+</p>
+<p>Eu não sabia o que aquela mensagem significava. O 614 Teixeira deve ter enviado uma mensagem ao grupo errado, o grupo em que os sargentos estão. Deve ter se enganado de grupo. Por que ele estava se desculpando?</p> 
+<p>“Eu acho que você mandou mensagem no grupo errado”, escrevi mas não enviei. Ignorei o que tinha acabado de ler. Quem leu também ignorou. <br> Deve ter sido um engano aquela mensagem. Tem que ser.</p> 
+<p>
+No calar da noite, eu e o Oliveira fomos para o quartel, e eu me deitei em minha cama e apaguei de tanto sono que estava. O dia e a noite haviam esgotado completamente as minhas energias
+</p>
+<p>
+O toque de alvorada está tocando. Levanto da cama e me preparo para o café: Estou de ressaca do dia anterior. O cabo de dia é o soldado Streb. Esse Streb tem a cara de um leitão. E ele é um carente que tem cara de um leitão. Não posso comparar qual deles é mais carente, o soldado Isaías ou o soldado Streb?, os dois empatam no nível de carência. Duas putinhas que devem pensar que mandam até nas cuecas dos recrutas. Eles não têm poder algum sobre nós. Apenas faça a faxina corretamente e vai se sair bem.
+</p> 
+<p>Para o Exército Brasileiro, fazer faxina é um método de disciplina, mesmo se a faxina durar das 18:00 até 22:00. Um pesadelo, mas caso você concentre a sua mente em outra coisa, pensar em sua hora de descanso, pode perceber o tempo passando mais rápido. Alguns reclamam e outros apenas aceitam em silêncio. Fazer faxina e limpar banheiros cheirando à bosta.</p> 
+<p>
+Eu estava em meu armário mexendo em meu celular. Eu vou assumir o serviço de sentinela às 18:00. Estou engraxando os coturnos para ir para a parada diária. A Parada Diária é uma formatura destinada à revista pessoal para o serviço diário. Eu devo preparar o uniforme e apresentar-me na parada diária com o cabelo cortado e a barba feita. Limpei o coturno para participar da "paradinha". <br>
+
+Após a paradinha, os de serviço de guarda do quartel; tivemos que fazer cricri e faxina. Era chato fazer cricri, e tirar os matinhos do meio-fio. Lembro-me de pensar que o Exército era mais operacional do que realmente é, na verdade. Às 10:30 e o nosso pelotão de serviço estava fazendo cricri em frente à cantina.
+</p>
+<p>CARVALHO: [Imitando a voz de Preuss] Ele se matou – disse Preuss aos prantos. - Ele se jogou de uma ponte! – disse ele no mais elevado tom de tristeza.
+<br> 
+Eu segui-o até o banheiro para saber o que tinha acontecido.
+</p>
+<p>CARVALHO:
+- O Teixeira pulou de uma ponte – disse Preuss para o Ebling – ele morreu.
+</p> 
+<p>Aquilo me foi dito, e foi como ser atingido por um raio três vezes seguidas. O combatente que costumava ser um dos últimos da retaguarda nunca mais seria visto sorrindo conosco, contando as suas piadas.
+</p> 
+<p>
+Não pude ir ao funeral do Teixeira porque estava de serviço. O velório dele seria pela tarde e todos da Base Administrativa da Guarnição de Santa Maria iriam, sem contar o pessoal de serviço. Azarados que não podem ir à uma última despedida de um amigo que morreu jovem demais.
+</p>
+<p>
+Escrevi embaixo de uma das camas do alojamento dos sentinelas de serviço de guarda: "TE-I-XE-I-RA. Descanse em paz 08.05.2024", e uma cruz do lado. Não pude conter as lágrimas e chorei sem acreditar no que tinha acontecido. Ele era um bom soldado. Ele era como um irmão para todos nós. Eu não entendo o porquê dele ter feito isso. Essa foi a primeira vez que senti a dor do luto, a dor da perda de um amigo. Como seguir em frente e fingir que eu estou bem com isso? 
+</p>
+<p>
+Estamos cansados, ansiosos, depressivos e com raiva. Somos trinta e nove recrutas agora e um cabo especialista. Você pode sentir a tristeza pairando no ar. Consegue sentir essa dor, você? Quero que você respire e inspire, feche os olhos e durma, e finja que o Teixeira está vivo e respirando quando acordar deste maldito pesadelo. É um pesadelo? 
+<br>
+Lembro-me do Teixeira preparando as ligas de borracha dentro da lavanderia. Ele estava concentrado demais com os kits para o campo. Eu observava-o enquanto fumava meus cigarros mentolados, sabor melância. Ele passava a maior parte do tempo naquela lavanderia, e sabe lá Deus, o que ele pensava, sozinho na lavanderia, devia ser o seu jeito de isolar-se de nós. Ele cortava com a tesoura as ligas de borracha para colocar em torno dos potes dos kits, devia ser potes sanremo, mas não os originais, esses são fáceis de quebrar. Poucos de nós tinham comprado potes sanremo originais, que seriam bons para levar para o campo, pois são mais resistentes, e difíceis de quebrar. O Chimainski tinha comprado potes sanremo que eram originais, deve ter comprado de um sargento por um preço barato.
+</p> 
+<p>
+Talvez o Teixeira tivesse problemas fora do quartel, com a família. Talvez nós pudéssemos ter evitado o suicídio dele. A verdade é que nós estávamos ocupados demais para se importar em perguntar se estávamos realmente bem. Um de nós não estava bem. Ele não deu sinais de depressão ou de um suicida, e como poderíamos saber? Ele cruelmente agonizou no Hospital, até que os médicos anunciaram a sua morte. 
+<br>
+O nome dele era Carlos Henrique Teixeira da Silva. Quero lembrar dele como um irmão de guerra. A vida é injusta com as pessoas boas.
+</p>
+<p>
+Quando o sargento Forgerini abriu o armário do Teixeira para pegar os pertences e devolver à família. Um dos itens dentro daquele armário estava em destaque: Uma Bíblia, o único livro que ele passava a noite lendo. A ficha não tinha caído ainda, até eu imaginar que nós nunca mais vamos ouvir a voz dele bradando o seu nome de guerra. É uma hamartia. Ele deve ter acreditado que não tinha outras alternativas ou que o sofrimento é insuportável. Uma falha em perceber a possibilidade de recuperação ou ajuda pode ser um erro trágico. 
+<br>
+Menos um combatente e mais uma estrela no céu, diria.
+<br><br>
+CARVALHO: Meia hora antes da meia-noite. Ele disse para a mãe dele que ele passaria em uma borracharia para pegar borracha de pneu para levar para arrumar seus kits para o campo. Se eu soubesse que ele faria isso, eu não deixaria ele ter ido sozinho, podia ter evitado – disse um dos que estavam de sentinela comigo que morava em São Pedro do Sul e era próximo do Teixeira. 
+<br>
+- Ele era muito quieto na dele, disse.
+</p>
+<p>
+Um dia eu havia comprado bolachas de mel e levado para o quartel. O Teixeira viu que eu estava com as bolachas de mel, e me pediu uma. Eu dei uma bolacha de mel e em troca ele me deu uma barra de cereal. É uma lembrança.
+<br>
+Teve um outro dia em que o Carlos pediu meu relógio, mas não emprestei. Eu não emprestei porque recém tinha pegado meu relógio, que antes tinha emprestado para o Silvano. O Teixeira estava de serviço de plantão.
+<br>
+Me sinto culpado por não ter emprestado o maldito relógio de pulso. Posso ver flashbacks das lembranças dele passando em minha cabeça. Tudo de tão recente. Ele nunca mais vai colocar os pés nesse quartel. A única coisa que tenho fisicamente dele é um plástico de uma barra de cereal. Tenho sentimentos em um pedaço de plástico.
+</p>
+<p>Estou no descanso. Todos os sentinelas do segundo quarto de hora estavam dormindo e roncando. A vontade de sair para fora do alojamento e acender um cigarro aumentava. Tenho que sair do alojamento da guarda. Preciso acender um marlboro.
+<br>
+Eu saio do alojamento furtivamente sem acordar ninguém, e acendo um dos meus cigarettes. Estava quase no horário de pernoite, que geralmente é às dezenove horas. Depois do pernoite vai ser a hora de ir para o rancho comer a ceia. A ceia é a última refeição preparada pelos rancheiros para os militares de serviço. O café da manhã, o almoço, o jantar e a ceia, são preparados por homens, cozinheiros, os chefes de cozinha, nada de mãos femininas para fazer essas refeições. Mas exceto pela sargento Marcela, que faz parte do rancho, geralmente ela se encontra em seu escritório, onde mantém todas as chaves das portas do rancho.
+<br>
+Pode notar-se claramente os homens babando por ela, e sabem que ela gosta de chamar a atenção deles. Ela mesma os provoca com cantadas, uma cadela no cio, é o que ela parece. A última vez que a vi, ela estava em uma das mesas de concreto, aquela que tem uma toalha de mesa, o que a diferencia das outras mesas do rancho, um simples detalhe, uma toalha verde. Ela estava conversando em uma rodinha com outros sargentos e um tenente, havia um soldado antigo também. Eles conversavam, tagarelavam e riam alto, despreocupados com quem estivessem os ouvindo, porque eles têm poder de algum tipo. Não ser um sentinela é o livramento deles. Tenho um pingo de inveja disso. A sargento Marcela é uma mulher morena, alta, cabelo preto atado para trás, o corpo malhado, ela aparenta ter vinte e oito anos. Não sei muito sobre ela. Não temos muita interação, mas sei que se tivéssemos mais interações, não mudaria nada. Ela continuaria sendo uma sargento, e eu um recruta.
+</p>
+<p>
+O pernoite aconteceu. O tenente nos passou a senha, a contra-senha e o número por adição: Morcego, penumbra e sete. Anotei em minha mão com um canetão preto, para decorar e lembrar depois, com aquelas duas palavras e aquele número, sou capaz de abordar o rondante.
+<br><br>
+CARVALHO: Estão todos bem para tirar o serviço? Ninguém está passando mal? – perguntou o tenente olhando para nós. <br><br>
+Analisando o meu estado mental atualmente, com tudo o que aconteceu, a morte do Teixeira, o funeral dele que não pude ir, o sentimento forte de melancolia e do luto, a grande ⁶tristeza. Caso eu diga que não estou bem, eles poderiam me substituir por um dos plantões, ou pelo meu canga, o 610 Da Rosa como chamam. O Da Rosa me odiaria por isso. Não quero ser mais odiado do que já sou. "Eu estou bem", é uma mentira que funciona perfeitamente contra os simplórios. Às vezes me sinto odiado.
+</p>
+
+<!-- 
+<p><a href="./transcript/2.html">Ler Transcrição Completa</a></p>
+<div class="next_previous">
+  <button class="btn_1" onclick="location.href='../home.html'">&Leftarrow; Episódio Anterior</button> <button class="btn_2" onclick="location.href='../ep/3.html'">Próximo Episódio &Rightarrow;</button>
+</div> -->
+</div>
+        </section>
+    </main>
+    <footer>
+      <h1 onclick="location.href='../home.html'">LO<strike>V</strike>SER STORY</h1>  
+      
+<p>Fotografia por <a href="https://www.facebook.com/gui.abreu.313">Carvalho</a></p>
+<p>Ouvir <a href="../category.html">Episódios</a></p>
+<p>Ver galeria de <a href="../artwork/pics.html">Fotografia</a></p>
+      
+    </footer>
+    
+    <script type="text/javascript" charset="utf-8">
+        var x = document.getElementById('main_menu');
+        var y = false;
+        
+        function menu() {
+            y = !y;
+            if (y) {
+                x.style.display = 'block';
+                setTimeout(() => {
+                    x.classList.add('visible');
+                }, 10);
+            } else {
+                x.classList.remove('visible');
+                setTimeout(() => {
+                    x.style.display = 'none';
+                }, 500);
+            }
+        }
+    </script>
+    
+    <script async src="../js/script0.js"></script>
+</body>
+
+</html>
