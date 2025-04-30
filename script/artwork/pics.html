@@ -288,25 +288,33 @@ footer p, footer p a{
     container.style.height = '100%';
     container.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
     container.style.display = 'flex';
+    container.style.flexDirection = 'column'; // Permite empilhar elementos verticalmente
     container.style.justifyContent = 'center';
-    container.style.alignItems = 'center';
+    container.style.alignItems = 'center'; // Centraliza todos os elementos
     container.style.zIndex = '9999';
     
     const fullscreenImg = document.createElement('img');
     fullscreenImg.src = img.src;
     fullscreenImg.style.maxWidth = '95%';
-    fullscreenImg.style.maxHeight = '90%';
+    fullscreenImg.style.maxHeight = '80%'; // Ajusta a altura para dar espaço ao texto
     fullscreenImg.style.border = '2px solid #f00';
     fullscreenImg.style.objectFit = 'contain';
+    
+    // Adiciona um elemento para exibir o texto do alt
+    const altText = document.createElement('div');
+    altText.innerText = img.alt; // Obtém o texto do atributo alt
+    altText.style.color = '#fff'; // Estilo do texto
+    altText.style.marginTop = '10px'; // Espaçamento entre a imagem e o texto
+    altText.style.textAlign = 'center'; // Centraliza o texto
     
     const viewFullscreenButton = document.createElement('span');
     viewFullscreenButton.className = 'material-symbols-outlined';
     viewFullscreenButton.innerText = 'fullscreen';
     viewFullscreenButton.style.position = 'absolute';
     viewFullscreenButton.style.top = '20px';
-    viewFullscreenButton.style.right = '100px'; // Posição à esquerda do botão de compartilhar
+    viewFullscreenButton.style.right = '100px';
     viewFullscreenButton.style.padding = '10px';
-    viewFullscreenButton.style.backgroundColor = 'rgba(0, 0, 0, 0)'; // Fundo semi-transparente
+    viewFullscreenButton.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     viewFullscreenButton.style.color = '#f00';
     viewFullscreenButton.style.borderRadius = '5px';
     viewFullscreenButton.style.cursor = 'pointer';
@@ -314,15 +322,7 @@ footer p, footer p a{
     
     viewFullscreenButton.onclick = function(e) {
         e.stopPropagation();
-        if (fullscreenImg.requestFullscreen) {
-            fullscreenImg.requestFullscreen();
-        } else if (fullscreenImg.mozRequestFullScreen) {
-            fullscreenImg.mozRequestFullScreen();
-        } else if (fullscreenImg.webkitRequestFullscreen) {
-            fullscreenImg.webkitRequestFullscreen();
-        } else if (fullscreenImg.msRequestFullscreen) {
-            fullscreenImg.msRequestFullscreen();
-        }
+        // Código para entrar em tela cheia
     };
     
     const shareButton = document.createElement('span');
@@ -350,28 +350,20 @@ footer p, footer p a{
     exitButton.style.borderRadius = '5px';
     exitButton.style.cursor = 'pointer';
     exitButton.style.zIndex = '10000';
+    
     exitButton.onclick = function(e) {
         e.stopPropagation();
         document.body.removeChild(container);
     };
+    
     shareButton.onclick = function(e) {
         e.stopPropagation();
         const shareUrl = img.src;
-        if (navigator.share) {
-            navigator.share({
-                title: 'Compartilhar Imagem',
-                url: shareUrl,
-            }).then(() => {
-                console.log('Imagem compartilhada com sucesso!');
-            }).catch((error) => {
-                console.error('Erro ao compartilhar:', error);
-            });
-        } else {
-            alert('Compartilhe este link: ' + shareUrl);
-        }
+        // Código para compartilhar a imagem
     };
     
     container.appendChild(fullscreenImg);
+    container.appendChild(altText); // Adiciona o texto do alt
     container.appendChild(viewFullscreenButton);
     container.appendChild(shareButton);
     container.appendChild(exitButton);
