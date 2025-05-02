@@ -278,8 +278,8 @@ footer div.white {
     background: #fff;
     text-align: center;
     padding-top: 25px;
+    user-select: none;
 }
 footer div.white img{
     border-radius: 15px;
-    user-select: none;
 }
