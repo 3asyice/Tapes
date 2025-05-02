@@ -281,4 +281,5 @@ footer div.white {
 }
 footer div.white img{
     border-radius: 15px;
+    user-select: none;
 }
