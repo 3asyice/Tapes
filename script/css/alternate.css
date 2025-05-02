@@ -254,21 +254,31 @@ div.next_previous button.btn_1 {
     border: none;
 }
 
-div.next_previous button.btn_1:hover{
+div.next_previous button.btn_1:hover {
     background: #f00;
 }
 
-footer{
+footer {
     padding-bottom: 50px;
 }
-footer p{ 
-    color:#D9D9D9;
-    display:block;
+
+footer p {
+    color: #D9D9D9;
+    display: block;
     font-size: 14px;
     margin-left: 14%;
     font-weight: 500;
 }
 
-footer h1{
+footer h1 {
     padding-bottom: 50px;
+}
+
+footer div.white {
+    background: #fff;
+    text-align: center;
+    padding-top: 25px;
+}
+footer div.white img{
+    border-radius: 15px;
 }
