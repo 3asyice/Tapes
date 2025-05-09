@@ -103,7 +103,7 @@ section.pre {
 }
 main {
     padding-top: 25%;
-    background-image: url('../../assets/img/inc.jpg') !important;
+    background-image: url('../../assets/img/memoria.jpg') !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -196,6 +196,9 @@ main section.pre div.next_previous button.btn_1 {
 }
 
 }
+header h1 strike{
+    color:grey;
+}
     </style>
 </head>
 
@@ -224,7 +227,7 @@ main section.pre div.next_previous button.btn_1 {
         
         <section class="pre">
             <div>
-<h2 style="transform:scaleY(1.8);">A DOR DA PERDA</h2>
+<h2 style="transform:scaleY(1.8); color:grey;">A DOR DA PERDA</h2>
 <button class="category_btn" onclick="location.href='../category.html'">reminder</button> 
 <p style="font-size: 12px; padding-top: 0;margin-top: 0;">Qui, 08/Mai 2025</p>
 <p>Hoje faz 1 ano completo desde a morte de Carlos Henrique <strong>Teixeira</strong> da Silva.</p>
@@ -232,7 +235,7 @@ main section.pre div.next_previous button.btn_1 {
     <div class="audio-player">
         <audio id="audio" src="https://www.big-loser.site/A/Audio/FITA%201,%20LADO%20A.opus"></audio>
         <button id="toggleBtn">▶</button>
-        <p>Ep 9: A DOR DO LUTO</p>
+        <p style="color:grey;">Ep 9: A DOR DO LUTO</p>
     </div>
     <div class="progress-container">
         <div class="progress-filled" id="progressFilled"></div>
@@ -293,6 +296,35 @@ A primeira música é da banda ===> <a href="https://youtu.be/498zUzNGQxY">The K
                 }, 500);
             }
         }
+        
+    // imagens main
+    
+  // Array de URLs das imagens
+  const imagens = [
+      '../../assets/img/memoria.jpg',
+      '../../assets/img/outro_fundo1.jpg',
+      '../../assets/img/outro_fundo2.jpg',
+      '../../assets/img/outro_fundo3.jpg'
+  ];
+  
+  let indice = 0;
+  
+  function mudarBackground() {
+      // Seleciona o elemento main
+      const main = document.querySelector('main');
+      
+      // Altera a imagem de fundo
+      main.style.backgroundImage = `url('${imagens[indice]}')`;
+      
+      // Atualiza o índice da próxima imagem
+      indice = (indice + 1) % imagens.length; // Faz loop no array
+  }
+  
+  // Chama a função mudarBackground a cada 10 segundos (10000 milissegundos)
+  setInterval(mudarBackground, 10000);
+  
+  // Chama a função uma vez para definir a imagem inicial
+  mudarBackground();
     </script>
     
     <script async src="../js/script0.js"></script>
