@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rádio do Tempo</title>
   <style>
     body {
@@ -32,12 +32,12 @@
 
   <button id="startBtn">Iniciar Rádio</button>
 
-  <center>
-    <audio id="audioPlayer" controls autoplay style="display:none;">
-      <source id="audioSource" src="" type="audio/mp3">
+<center>
+<audio id="audioPlayer" controls autoplay style="display:none;">
+<source id="audioSource" src="" type="audio/mp3">
       Seu navegador não suporta áudio.
-    </audio>
-  </center>
+</audio>
+</center>
 
 <script>
   const audio = document.getElementById("audioPlayer");
@@ -83,8 +83,8 @@ const playlist = [
 }
 
   // Toca uma faixa da playlist
-  function tocarFaixa(indice) {
-    const faixa = playlist[indice];
+function tocarFaixa(indice) {
+const faixa = playlist[indice];
     source.src = faixa.arquivo;
     audio.load();
     audio.play().catch(e => {
@@ -93,7 +93,7 @@ const playlist = [
   }
 
   // Quando o áudio terminar, avança para a próxima faixa
-  audio.addEventListener("ended", () => {
+audio.addEventListener("ended", () => {
     indiceAtual = (indiceAtual + 1) % playlist.length;
     tocarFaixa(indiceAtual);
   });
@@ -107,6 +107,5 @@ const playlist = [
     tocarFaixa(indiceAtual);
   });
 </script>
-
 </body>
 </html>
