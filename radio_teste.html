@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rádio do Tempo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      color: #eee;
+    }
+    #startBtn {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Rádio do Tempo</h1>
+  <p>Inicia de acordo com o horário real e continua em looping.</p>
+
+  <button id="startBtn">Iniciar Rádio</button>
+
+  <center>
+    <audio id="audioPlayer" controls autoplay style="display:none;">
+      <source id="audioSource" src="" type="audio/mp3">
+      Seu navegador não suporta áudio.
+    </audio>
+  </center>
+
+<script>
+  const audio = document.getElementById("audioPlayer");
+  const source = document.getElementById("audioSource");
+  const startBtn = document.getElementById("startBtn");
+
+  // Playlist em ordem fixa
+const playlist = [
+{ nome: "madrugada", inicio: 0, fim: 5, arquivo: "assets/tape/F3LA.mp3" },
+
+{ nome: "Teixeira",     inicio: 6, fim: 11, arquivo: "assets/tape/F1LB.mp3" },
+
+{ nome: "Isaias",     inicio: 12, fim: 13, arquivo: "/assets/tape/F6LB.mp3" },
+
+{ nome: "Isaias",     inicio: 14, fim: 17, arquivo: "assets/tape/F1LA.mp3" },
+
+{ nome: "Azevedo",     inicio: 18, fim: 23, arquivo: "assets/tape/F2LA.mp3" }
+  ];
+
+  let indiceAtual = 0;
+
+  // Determina o índice inicial com base na hora real
+  function definirIndiceInicial() {
+    const hora = new Date().getHours();
+    const faixaAtual = playlist.findIndex(p => hora >= p.inicio && hora <= p.fim);
+    return faixaAtual !== -1 ? faixaAtual : 0;
+}
+
+  // Toca uma faixa da playlist
+  function tocarFaixa(indice) {
+    const faixa = playlist[indice];
+    source.src = faixa.arquivo;
+    audio.load();
+    audio.play().catch(e => {
+      console.warn("Erro ao tocar áudio:", e);
+    });
+  }
+
+  // Quando o áudio terminar, avança para a próxima faixa
+  audio.addEventListener("ended", () => {
+    indiceAtual = (indiceAtual + 1) % playlist.length;
+    tocarFaixa(indiceAtual);
+  });
+
+  // Ao clicar no botão, inicia com a faixa correspondente à hora real
+  startBtn.addEventListener("click", () => {
+    startBtn.style.display = "none";
+    audio.style.display = "block";
+
+    indiceAtual = definirIndiceInicial();
+    tocarFaixa(indiceAtual);
+  });
+</script>
+
+</body>
+</html>
