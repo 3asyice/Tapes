@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<link rel="manifest" href="script/json/manifest.json"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="script/json/manifest.json"/>
   <title>Rádio do Tempo</title>
   <style>
     body {
@@ -33,6 +33,8 @@
 
   <p><strong>Tocando agora:</strong></p>
   <p id="audio_atual">---</p>
+  <p id="horario_atual">Início: --:--:-- | Fim: --:--:--</p>
+
   <p><strong>Próximo:</strong></p>
   <p id="proximo_audio">---</p>
 
@@ -54,6 +56,7 @@
 
   const audioAtualTexto = document.getElementById("audio_atual");
   const proximoAudioTexto = document.getElementById("proximo_audio");
+  const horarioAtualTexto = document.getElementById("horario_atual");
 
   const playlist = [
     { nome: "Aviso", arquivo: "assets/tape/The_Disclaimer.mp3", inicio: 0, fim: 1 },
@@ -96,28 +99,46 @@
   ];
 
   let indiceAtual = 0;
+  let dataInicioFaixa = null;
 
-  function definirIndiceInicial() {
-    const hora = new Date().getHours();
-    const faixaAtual = playlist.findIndex(p => hora >= p.inicio && hora < p.fim);
-    return faixaAtual !== -1 ? faixaAtual : 0;
+  function formatarHorario(date) {
+    return `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
   }
 
   function atualizarInterface(indice) {
     const atual = playlist[indice];
     const proximo = playlist[(indice + 1) % playlist.length];
+
     audioAtualTexto.textContent = atual.nome;
     proximoAudioTexto.textContent = proximo.nome;
+
+    const horaInicioFormatada = formatarHorario(dataInicioFaixa);
+
+    // Calcula horário de término com base na duração
+    if (!isNaN(audio.duration) && audio.duration > 0) {
+      const dataFim = new Date(dataInicioFaixa.getTime() + audio.duration * 1000);
+      const horaFimFormatada = formatarHorario(dataFim);
+      horarioAtualTexto.textContent = `Início: ${horaInicioFormatada} | Fim: ${horaFimFormatada}`;
+    } else {
+      horarioAtualTexto.textContent = `Início: ${horaInicioFormatada} | Fim: carregando...`;
+    }
   }
 
   function tocarFaixa(indice) {
     const faixa = playlist[indice];
     source.src = faixa.arquivo;
     audio.load();
+
+    // Marca horário de início da faixa
+    dataInicioFaixa = new Date();
+
     audio.play().catch(e => {
       console.warn("Erro ao tocar áudio:", e);
     });
-    atualizarInterface(indice);
+
+    audio.onloadedmetadata = () => {
+      atualizarInterface(indice);
+    };
   }
 
   audio.addEventListener("ended", () => {
@@ -131,27 +152,29 @@
     indiceAtual = definirIndiceInicial();
     tocarFaixa(indiceAtual);
   });
-  
-window.addEventListener("beforeunload", () => {
-  localStorage.setItem("indiceAtual", indiceAtual);
-  localStorage.setItem("tempoAtual", audio.currentTime);
-});
 
-
-indiceAtual = parseInt(localStorage.getItem("indiceAtual")) || definirIndiceInicial();
-const tempoSalvo = parseFloat(localStorage.getItem("tempoAtual")) || 0;
-
-tocarFaixa(indiceAtual);
-audio.currentTime = tempoSalvo;
-
-
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") {
-    // Quando voltar para a aba, retoma a reprodução (opcional)
-    audio.play().catch(() => {});
+  function definirIndiceInicial() {
+    const hora = new Date().getHours();
+    const faixaAtual = playlist.findIndex(p => hora >= p.inicio && hora < p.fim);
+    return faixaAtual !== -1 ? faixaAtual : 0;
   }
-});
 
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("indiceAtual", indiceAtual);
+    localStorage.setItem("tempoAtual", audio.currentTime);
+  });
+
+  indiceAtual = parseInt(localStorage.getItem("indiceAtual")) || definirIndiceInicial();
+  const tempoSalvo = parseFloat(localStorage.getItem("tempoAtual")) || 0;
+
+  tocarFaixa(indiceAtual);
+  audio.currentTime = tempoSalvo;
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      audio.play().catch(() => {});
+    }
+  });
 </script>
 
 </body>

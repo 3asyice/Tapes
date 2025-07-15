@@ -2,7 +2,9 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="manifest" href="script/json/manifest.json"/>
   <title>Rádio do Tempo</title>
   <style>
     body {
@@ -28,138 +30,129 @@
 <body>
 
   <h1>Rádio do Tempo</h1>
+
+  <p><strong>Tocando agora:</strong></p>
+  <p id="audio_atual">---</p>
+  <p><strong>Próximo:</strong></p>
+  <p id="proximo_audio">---</p>
+
   <p>Inicia de acordo com o horário real e continua em looping.</p>
 
   <button id="startBtn">Iniciar Rádio</button>
 
-<center>
-<audio id="audioPlayer" controls autoplay style="display:none;">
-<source id="audioSource" src="" type="audio/mp3">
+  <center>
+    <audio id="audioPlayer" controls autoplay style="display:none;">
+      <source id="audioSource" src="" type="audio/mp3">
       Seu navegador não suporta áudio.
-</audio>
-</center>
+    </audio>
+  </center>
 
 <script>
   const audio = document.getElementById("audioPlayer");
   const source = document.getElementById("audioSource");
   const startBtn = document.getElementById("startBtn");
 
-  // Playlist em ordem fixa
-const playlist = [
+  const audioAtualTexto = document.getElementById("audio_atual");
+  const proximoAudioTexto = document.getElementById("proximo_audio");
 
-{ nome: "Aviso", inicio: 0, fim: 1, arquivo: "assets/tape/The_Disclaimer.mp3" },
-
-{ nome: "A Decisão Errada", inicio: 0, fim: 1, arquivo: "assets/tape/F4LB.mp3" },
-
-{ nome: "Incorporação", inicio: 1, fim: 2, arquivo: "assets/tape/F9LB.mp3" },
-
-{ nome: "Internato", inicio: 2, fim: 3, arquivo: "assets/tape/F7LB.mp3" },
-
-{ nome: "Plantão", inicio: 3, fim: 4, arquivo: "assets/tape/F5LA.mp3" },
-
-{ nome: "A Mensagem", inicio: 4, fim: 5, arquivo: "assets/tape/F6LA.mp3" },
-
-{ nome: "A Dor do Luto", inicio: 5, fim: 6, arquivo: "assets/tape/F1LA.mp3" },
-
-{ nome: "Bergmann", inicio: 5, fim: 6, arquivo: "assets/tape/F8LA.mp3" },
-
-{ nome: "Campo", inicio: 6, fim: 7, arquivo: "assets/tape/F6LB.mp3" },
-
-{ nome: "Cover de Azevedo", inicio: 6, fim: 7, arquivo: "assets/tape/Cover_Azevedo.mp3" },
-
-{ nome: "Azevedo", inicio: 6, fim: 7, arquivo: "assets/tape/F2LA.mp3" },
-
-{ nome: "Seções", inicio: 7, fim: 8, arquivo: "assets/tape/F7LA.mp3" },
-
-{ nome: "Isaias", inicio: 7, fim: 8, arquivo: "assets/tape/F1LB.mp3" },
-
-{ nome: "A Alteração — Acidente", inicio: 8, fim: 9, arquivo: "assets/tape/esse_sou_eu.mp3" },
-
-{ nome: "A Alteração", inicio: 8, fim: 9, arquivo: "assets/tape/F10LA.mp3" },
-
-{ nome: "O 2º Quarto de Hora", inicio: 9, fim: 10, arquivo: "assets/tape/F5LB.mp3" },
-
-{ nome: "Capisani", inicio: 10, fim: 11, arquivo: "assets/tape/F8LB.mp3" },
-
-{ nome: "A Expulsão", inicio: 11, fim: 12, arquivo: "assets/tape/F3LA.mp3" },
-
-{ nome: "Soares", inicio: 12, fim: 13, arquivo: "assets/tape/F2LB.mp3" },
-
-{ nome: "A Sindicância", inicio: 13, fim: 14, arquivo: "assets/tape/A_Sindicancia.mp3" },
-
-{ nome: "Último Episódio da Temporada 1", inicio: 14, fim: 15, arquivo: "assets/tape/Last_Episode_of_The_Season1.mp3" },
-
-{ nome: "A Fita de Lemos", inicio: 15, fim: 16, arquivo: "assets/tape/F27LA.mp3" },
-
-{ nome: "Entrevista no Stok Center", inicio: 16, fim: 17, arquivo: "assets/tape/Entrevista_no_STOK_CENTER.mp3" },
-
-{ nome: "Policiais Corruptos", inicio: 17, fim: 18, arquivo: "assets/tape/F3LB.mp3" },
-
-{ nome: "Uma Ameaça para Thales", inicio: 18, fim: 19, arquivo: "assets/tape/F4LA.mp3" },
-
-{ nome: "Hannah Baker Fita 1 Lado A", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F1LA.mp3" },
-
-
-{ nome: "Hannah Baker Fita 1 Lado B", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F1LB.mp3" },
-
-{ nome: "Hannah Baker Fita 2 Lado A", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F2LA.mp3" },
-
-{ nome: "Hannah Baker Fita 2 Lado B", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F2LB.mp3" },
-
-{ nome: "Hannah Baker Fita 3 Lado A", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F3LA.mp3" },
-
-{ nome: "Hannah Baker Fita 3 Lado B", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F3LB.mp3" },
-
-{ nome: "Hannah Baker Fita 4 Lado A", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F4LA.mp3" },
-
-{ nome: "Hannah Baker Fita 4 Lado B", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F4LB.mp3" },
-
-{ nome: "Hannah Baker Fita 5 Lado A", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F5LA.mp3" },
-
-{ nome: "Hannah Baker Fita 5 Lado B", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F5LB.mp3" },
-
-{ nome: "Hannah Baker Fita 6 Lado A", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F6LA.mp3" },
-
-{ nome: "Hannah Baker Fita 6 Lado B", inicio: 22, fim: 23, arquivo: "assets/HB_tape/HB_F6LB.mp3" },
-
-
-
-
-];
+  const playlist = [
+    { nome: "Aviso", arquivo: "assets/tape/The_Disclaimer.mp3", inicio: 0, fim: 1 },
+    { nome: "A Decisão Errada", arquivo: "assets/tape/F4LB.mp3", inicio: 0, fim: 1 },
+    { nome: "Incorporação", arquivo: "assets/tape/F9LB.mp3", inicio: 1, fim: 2 },
+    { nome: "Internato", arquivo: "assets/tape/F7LB.mp3", inicio: 2, fim: 3 },
+    { nome: "Plantão", arquivo: "assets/tape/F5LA.mp3", inicio: 3, fim: 4 },
+    { nome: "A Mensagem", arquivo: "assets/tape/F6LA.mp3", inicio: 4, fim: 5 },
+    { nome: "A Dor do Luto", arquivo: "assets/tape/F1LA.mp3", inicio: 5, fim: 6 },
+    { nome: "Bergmann", arquivo: "assets/tape/F8LA.mp3", inicio: 5, fim: 6 },
+    { nome: "Campo", arquivo: "assets/tape/F6LB.mp3", inicio: 6, fim: 7 },
+    { nome: "Cover de Azevedo", arquivo: "assets/tape/Cover_Azevedo.mp3", inicio: 6, fim: 7 },
+    { nome: "Azevedo", arquivo: "assets/tape/F2LA.mp3", inicio: 6, fim: 7 },
+    { nome: "Seções", arquivo: "assets/tape/F7LA.mp3", inicio: 7, fim: 8 },
+    { nome: "Isaias", arquivo: "assets/tape/F1LB.mp3", inicio: 7, fim: 8 },
+    { nome: "A Alteração — Acidente", arquivo: "assets/tape/esse_sou_eu.mp3", inicio: 8, fim: 9 },
+    { nome: "A Alteração", arquivo: "assets/tape/F10LA.mp3", inicio: 8, fim: 9 },
+    { nome: "O 2º Quarto de Hora", arquivo: "assets/tape/F5LB.mp3", inicio: 9, fim: 10 },
+    { nome: "Capisani", arquivo: "assets/tape/F8LB.mp3", inicio: 10, fim: 11 },
+    { nome: "A Expulsão", arquivo: "assets/tape/F3LA.mp3", inicio: 11, fim: 12 },
+    { nome: "Soares", arquivo: "assets/tape/F2LB.mp3", inicio: 12, fim: 13 },
+    { nome: "A Sindicância", arquivo: "assets/tape/A_Sindicancia.mp3", inicio: 13, fim: 14 },
+    { nome: "Último Episódio da Temporada 1", arquivo: "assets/tape/Last_Episode_of_The_Season1.mp3", inicio: 14, fim: 15 },
+    { nome: "A Fita de Lemos", arquivo: "assets/tape/F27LA.mp3", inicio: 15, fim: 16 },
+    { nome: "Entrevista no Stok Center", arquivo: "assets/tape/Entrevista_no_STOK_CENTER.mp3", inicio: 16, fim: 17 },
+    { nome: "Policiais Corruptos", arquivo: "assets/tape/F3LB.mp3", inicio: 17, fim: 18 },
+    { nome: "Uma Ameaça para Thales", arquivo: "assets/tape/F4LA.mp3", inicio: 18, fim: 19 },
+    { nome: "Hannah Baker Fita 1 Lado A", arquivo: "assets/HB_tape/HB_F1LA.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 1 Lado B", arquivo: "assets/HB_tape/HB_F1LB.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 2 Lado A", arquivo: "assets/HB_tape/HB_F2LA.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 2 Lado B", arquivo: "assets/HB_tape/HB_F2LB.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 3 Lado A", arquivo: "assets/HB_tape/HB_F3LA.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 3 Lado B", arquivo: "assets/HB_tape/HB_F3LB.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 4 Lado A", arquivo: "assets/HB_tape/HB_F4LA.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 4 Lado B", arquivo: "assets/HB_tape/HB_F4LB.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 5 Lado A", arquivo: "assets/HB_tape/HB_F5LA.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 5 Lado B", arquivo: "assets/HB_tape/HB_F5LB.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 6 Lado A", arquivo: "assets/HB_tape/HB_F6LA.mp3", inicio: 22, fim: 23 },
+    { nome: "Hannah Baker Fita 6 Lado B", arquivo: "assets/HB_tape/HB_F6LB.mp3", inicio: 22, fim: 23 }
+  ];
 
   let indiceAtual = 0;
 
-  // Determina o índice inicial com base na hora real
   function definirIndiceInicial() {
     const hora = new Date().getHours();
-    const faixaAtual = playlist.findIndex(p => hora >= p.inicio && hora <= p.fim);
+    const faixaAtual = playlist.findIndex(p => hora >= p.inicio && hora < p.fim);
     return faixaAtual !== -1 ? faixaAtual : 0;
-}
+  }
 
-  // Toca uma faixa da playlist
-function tocarFaixa(indice) {
-const faixa = playlist[indice];
+  function atualizarInterface(indice) {
+    const atual = playlist[indice];
+    const proximo = playlist[(indice + 1) % playlist.length];
+    audioAtualTexto.textContent = atual.nome;
+    proximoAudioTexto.textContent = proximo.nome;
+  }
+
+  function tocarFaixa(indice) {
+    const faixa = playlist[indice];
     source.src = faixa.arquivo;
     audio.load();
     audio.play().catch(e => {
       console.warn("Erro ao tocar áudio:", e);
     });
+    atualizarInterface(indice);
   }
 
-  // Quando o áudio terminar, avança para a próxima faixa
-audio.addEventListener("ended", () => {
+  audio.addEventListener("ended", () => {
     indiceAtual = (indiceAtual + 1) % playlist.length;
     tocarFaixa(indiceAtual);
   });
 
-  // Ao clicar no botão, inicia com a faixa correspondente à hora real
   startBtn.addEventListener("click", () => {
     startBtn.style.display = "none";
     audio.style.display = "block";
-
     indiceAtual = definirIndiceInicial();
     tocarFaixa(indiceAtual);
   });
+  
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("indiceAtual", indiceAtual);
+  localStorage.setItem("tempoAtual", audio.currentTime);
+});
+
+
+indiceAtual = parseInt(localStorage.getItem("indiceAtual")) || definirIndiceInicial();
+const tempoSalvo = parseFloat(localStorage.getItem("tempoAtual")) || 0;
+
+tocarFaixa(indiceAtual);
+audio.currentTime = tempoSalvo;
+
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    // Quando voltar para a aba, retoma a reprodução (opcional)
+    audio.play().catch(() => {});
+  }
+});
+
 </script>
+
 </body>
 </html>
